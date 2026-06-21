@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="תכל'ס תורה - הרשמה לעדכונים">
+  <title>תכל'ס תורה | הרשמה</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <main class="container">
+    <header class="hero">
+      <img src="logo.png" alt="תכלס תורה" class="hero-logo">
+      <p class="hero-subtitle">השאירו פרטים ונעדכן אתכם בכל מה שחם</p>
+    </header>
+
+    <section class="form-card" aria-labelledby="form-title">
+      <h2 id="form-title" class="form-title">טופס הרשמה</h2>
+
+      <div id="form-alert" class="form-alert" role="alert" hidden></div>
+
+      <form id="lead-form" novalidate>
+        <fieldset class="form-section">
+          <legend>פרטים אישיים</legend>
+
+          <div class="field">
+            <label for="fullName">שם מלא <span class="required-mark">*</span></label>
+            <input type="text" id="fullName" name="fullName" autocomplete="name" required maxlength="100">
+            <span class="field-error" data-error-for="fullName"></span>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="phone">טלפון <span class="required-mark">*</span></label>
+              <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required maxlength="20">
+              <span class="field-error" data-error-for="phone"></span>
+            </div>
+
+            <div class="field">
+              <label for="email">מייל <span class="required-mark">*</span></label>
+              <input type="email" id="email" name="email" autocomplete="email" required maxlength="254">
+              <span class="field-error" data-error-for="email"></span>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="address">כתובת מגורים <span class="required-mark">*</span></label>
+            <input type="text" id="address" name="address" autocomplete="street-address" required maxlength="200">
+            <span class="field-error" data-error-for="address"></span>
+          </div>
+        
+
+          <div class="field">
+            <label for="institution">מוסד לימודים</label>
+            <input type="text" id="institution" name="institution" maxlength="150">
+            <span class="field-error" data-error-for="institution"></span>
+          </div>
+
+          <div class="field">
+            <label for="arrivalMethod">דרך הגעה</label>
+            <select id="arrivalMethod" name="arrivalMethod">
+              <option value="">בחרו אפשרות</option>
+              <option value="lottery">הגרלת סטטוסים</option>
+              <option value="instagram">אינסטגרם</option>
+              <option value="tiktok">טיקטוק</option>
+              <option value="youtube">יוטיוב</option>
+              <option value="friend">חבר</option>
+              <option value="other">אחר</option>
+            </select>
+            <span class="field-error" data-error-for="arrivalMethod"></span>
+          </div>
+
+          <div class="field" id="other-source-wrap" hidden>
+            <label for="otherSource">פרטו (אחר)</label>
+            <input type="text" id="otherSource" name="otherSource" maxlength="150">
+            <span class="field-error" data-error-for="otherSource"></span>
+          </div>
+        </fieldset>
+
+        <fieldset class="form-section consent-section">
+          <label class="checkbox-field">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>אני מאשר/ת קבלת דיוור במייל/סמס</span>
+          </label>
+          <span class="field-error" data-error-for="consent"></span>
+
+
+        <button type="submit" class="submit-btn" id="submit-btn">
+          <span class="btn-text">שליחה</span>
+          <span class="btn-spinner" hidden aria-hidden="true"></span>
+        </button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>פותח ע"י יו"ש תוכנה</p>
+    </footer>
+  </main>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
